@@ -6,7 +6,7 @@ require 'xml_to_json/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'xml_to_json'
-  spec.version       = XmlToJson::VERSION
+  spec.version       = XMLToJson::VERSION
   spec.authors       = ['Grzegorz Jakubiak']
   spec.email         = ['grzegorz.jakubiak@outlook.com']
 
