@@ -37,7 +37,7 @@ module XMLToJson
         return if text.strip.empty?
 
         element = @stack.shift
-        element.attributes[:_text] = text
+        element.attributes[:@text] = text
         @stack.prepend(element)
       end
     end
