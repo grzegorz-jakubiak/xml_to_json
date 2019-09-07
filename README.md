@@ -24,7 +24,11 @@ Or install it yourself as:
 ```ruby
 require 'xml_to_json'
 
-xml_document = XMLToJson::Document.new(<xml_document_path>)
+xml_document = XMLToJson::Document.new(<xml_document_string>)
+
+file = File.new(<xml_document_path>)
+xml_document = XMLToJson::Document.new(file)
+
 xml_document.to_hash
 xml_document.to_json
 ```

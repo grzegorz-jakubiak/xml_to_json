@@ -9,7 +9,7 @@ require 'json'
 module XMLToJson
   class Document
     def initialize(xml_document)
-      @document = File.new(xml_document)
+      @document = xml_document
     end
 
     def to_hash

@@ -2,6 +2,7 @@
 
 require 'bundler/setup'
 require 'xml_to_json'
+require 'json'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
