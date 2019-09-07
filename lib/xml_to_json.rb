@@ -10,7 +10,6 @@ module XMLToJson
   class Document
     def initialize(xml_document)
       @document = File.new(xml_document)
-      @to_hash = nil
     end
 
     def to_hash
