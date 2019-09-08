@@ -5,9 +5,12 @@ RSpec.describe XMLToJson::Document do
     "<div><p class='paragraph'>Hello</p>World!</div>"
   end
 
-  before :each do
-    @xml_document = XMLToJson::Document.new(valid_xml_string)
-    @expected_hash = {
+  let(:xml_document) do
+    XMLToJson::Document.new(valid_xml_string)
+  end
+
+  let(:expected_hash) do
+    {
       div: {
         p: {
           _class: 'paragraph',
@@ -22,7 +25,7 @@ RSpec.describe XMLToJson::Document do
     context 'valid input' do
       context 'input string' do
         it 'returns valid hash' do
-          expect(@xml_document.to_hash).to eq(@expected_hash)
+          expect(xml_document.to_hash).to eq(expected_hash)
         end
       end
 
@@ -30,9 +33,19 @@ RSpec.describe XMLToJson::Document do
         it 'returns valid hash' do
           file = File.new('spec/test_file/index.html')
           result = JSON.parse(File.read('spec/test_file/result.json'), symbolize_names: true)
-          xml_document = XMLToJson::Document.new(file)
-          expect(xml_document.to_hash).to eq(result)
+          xml_file = XMLToJson::Document.new(file)
+          expect(xml_file.to_hash).to eq(result)
         end
+      end
+    end
+
+    context 'invalid input' do
+      it 'raises ParserError' do
+        invalid_xml = XMLToJson::Document.new('slkdjfsdl')
+        expect { invalid_xml.to_hash }.to raise_error(REXML::ParseException, 'Invalid XML')
+
+        invalid_xml = XMLToJson::Document.new('<movies><movie>sdjkads</movies>')
+        expect { invalid_xml.to_hash }.to raise_error(REXML::ParseException)
       end
     end
   end
@@ -41,7 +54,7 @@ RSpec.describe XMLToJson::Document do
     context 'valid input' do
       context 'input string' do
         it 'returns valid json' do
-          expect(@xml_document.to_json).to eq(@expected_hash.to_json)
+          expect(xml_document.to_json).to eq(expected_hash.to_json)
         end
       end
 
@@ -49,9 +62,19 @@ RSpec.describe XMLToJson::Document do
         it 'returns expected json' do
           file = File.new('spec/test_file/index.html')
           result = File.read('spec/test_file/result.json')
-          xml_document = XMLToJson::Document.new(file)
-          expect(xml_document.to_json).to eq(result)
+          xml_file = XMLToJson::Document.new(file)
+          expect(xml_file.to_json).to eq(result)
         end
+      end
+    end
+
+    context 'invalid input' do
+      it 'raises ParserError' do
+        invalid_xml = XMLToJson::Document.new('slkdjfsdl')
+        expect { invalid_xml.to_json }.to raise_error(REXML::ParseException, 'Invalid XML')
+
+        invalid_xml = XMLToJson::Document.new('<movies><movie>sdjkads</movies>')
+        expect { invalid_xml.to_json }.to raise_error(REXML::ParseException)
       end
     end
   end
