@@ -16,7 +16,6 @@ RSpec.describe XMLToJson::Document do
         :@text => 'World!'
       }
     }
-    @e = {:html=>{:_xmlns=>"http://www.w3.org/1999/xhtml", :_lang=>"en-us", :head=>{:meta=>{:_charset=>"UTF-8"}, :title=>{:@text=>"CV Template Title"}}, :body=>{:section=>[{:h1=>{:@text=>"Your name"}, :hr=>{}, :ul=>{:li=>[{:@text=>"Date of Birth: 29.02.1985"}, {:@text=>"E-mail: your.name@example.com"}, {:@text=>"Phone number: 782129891"}, {:i=>{:_class=>"github", :@text=>"github"}, :@text=>" github.com/your.name"}]}, :img=>{:_src=>"https://picsum.photos/id/760/200/200"}}, {:h2=>{:@text=>"Education"}, :hr=>{}, :ul=>{:li=>[{:@text=>"19.02.2013 - 19.03.2014 Your University - Master's degree"}, {:@text=>"19.02.2013 - 19.03.2014 Your University - Bachelor's degree"}]}}, {:h2=>{:@text=>"Work Experience"}, :hr=>{}, :ul=>{:li=>[{:@text=>"19.02.2013 - today Your Company"}, {:@text=>"19.02.2013 - 19.03.2014 Your Internship"}]}}]}}} 
   end
 
   context '#to_hash' do
@@ -28,7 +27,12 @@ RSpec.describe XMLToJson::Document do
       end
 
       context 'input file' do
-        
+        it 'returns valid hash' do
+          file = File.new('spec/test_file/index.html')
+          result = JSON.parse(File.read('spec/test_file/result.json'), symbolize_names: true)
+          xml_document = XMLToJson::Document.new(file)
+          expect(xml_document.to_hash).to eq(result)
+        end
       end
     end
   end
