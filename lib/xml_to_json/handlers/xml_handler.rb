@@ -35,7 +35,7 @@ module XMLToJson
 
       def characters(text)
         return if text.strip.empty?
-        raise REXML::ParseException, 'Invalid XML' if @stack.empty? 
+        raise REXML::ParseException, 'Invalid XML' if @stack.empty?
 
         element = @stack.shift
         element.attributes[:@text] = text

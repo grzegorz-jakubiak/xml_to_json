@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe XMLToJson::Tags::XMLTag do
-  let!(:p_tag) do 
+  let!(:p_tag) do
     XMLToJson::Tags::XMLTag.new(tag: 'p', attributes: { _class: 'caption' })
   end
 
@@ -17,7 +17,7 @@ RSpec.describe XMLToJson::Tags::XMLTag do
 
   it 'creates p tag with class attribute' do
     expect(p_tag.tag).to eq('p')
-    expect(p_tag.attributes).to eq({ _class: 'caption' })
+    expect(p_tag.attributes).to eq(_class: 'caption')
   end
 
   it 'adds b tag to p tags attributes' do
