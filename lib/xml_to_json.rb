@@ -1,3 +1,4 @@
+# typed: true
 # frozen_string_literal: true
 
 require_relative 'xml_to_json/version'
