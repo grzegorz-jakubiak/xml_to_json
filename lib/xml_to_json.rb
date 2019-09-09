@@ -8,21 +8,27 @@ require 'rexml/parsers/sax2parser'
 require 'json'
 
 module XMLToJson
+  extend T::Sig
+
   class Document
+    
     def initialize(xml_document)
       @document = xml_document
     end
 
+    XMLToJson.sig { returns(Hash) }
     def to_hash
       @to_hash ||= parse
     end
 
+    XMLToJson.sig { returns(String) }
     def to_json(*_args)
       to_hash.to_json
     end
 
     private
 
+    XMLToJson.sig { returns(String) }
     def parse
       parser = REXML::Parsers::SAX2Parser.new(@document)
       handler = Handlers::XMLHandler.new

@@ -6,11 +6,13 @@ module XMLToJson
     class XMLTag
       attr_reader :tag, :attributes
 
+      XMLToJson.sig {params(tag: Symbol, attributes: Hash).void}
       def initialize(tag:, attributes:)
         @tag = tag
         @attributes = attributes
       end
 
+      XMLToJson.sig {params(tag: Symbol, attributes: Hash).void}
       def add_to_attributes(tag, attributes)
         if @attributes[tag].nil?
           @attributes[tag] = attributes
