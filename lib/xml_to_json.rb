@@ -1,6 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
+require 'sorbet-runtime'
 require_relative 'xml_to_json/version'
 require_relative 'xml_to_json/tags/xml_tag'
 require_relative 'xml_to_json/handlers/xml_handler'
@@ -8,27 +9,26 @@ require 'rexml/parsers/sax2parser'
 require 'json'
 
 module XMLToJson
-  extend T::Sig
-
   class Document
-    
+    extend T::Sig
+
     def initialize(xml_document)
       @document = xml_document
     end
 
-    XMLToJson.sig { returns(Hash) }
+    sig { returns(Hash) }
     def to_hash
       @to_hash ||= parse
     end
 
-    XMLToJson.sig { returns(String) }
+    sig { params(_args: T.untyped).returns(String) }
     def to_json(*_args)
       to_hash.to_json
     end
 
     private
 
-    XMLToJson.sig { returns(String) }
+    sig { returns(Hash) }
     def parse
       parser = REXML::Parsers::SAX2Parser.new(@document)
       handler = Handlers::XMLHandler.new
