@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Grzegorz Jakubiak']
   spec.email         = ['grzegorz.jakubiak@outlook.com']
 
-  spec.summary       = ''
-  spec.description   = ''
+  spec.summary       = 'Allows you to parse XML documents into Ruby Hash or JSON'
+  spec.description   = spec.summary
   spec.homepage      = 'https://github.com/grzegorz-jakubiak/xml_to_json'
   spec.license       = 'MIT'
   spec.required_ruby_version = '>=2.5'
