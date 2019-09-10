@@ -1,7 +1,6 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'sorbet-runtime'
 require_relative 'xml_to_json/version'
 require_relative 'xml_to_json/tags/xml_tag'
 require_relative 'xml_to_json/handlers/xml_handler'

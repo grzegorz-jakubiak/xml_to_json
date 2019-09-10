@@ -7,13 +7,13 @@ module XMLToJson
       extend T::Sig
       attr_reader :tag, :attributes
 
-      sig {params(tag: Symbol, attributes: Hash).void}
+      sig { params(tag: Symbol, attributes: Hash).void }
       def initialize(tag:, attributes:)
         @tag = tag
         @attributes = attributes
       end
 
-      sig {params(tag: Symbol, attributes: Hash).void}
+      sig { params(tag: Symbol, attributes: Hash).void }
       def add_to_attributes(tag, attributes)
         if @attributes[tag].nil?
           @attributes[tag] = attributes

@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'bundler/setup'
+require 'sorbet-runtime'
 require 'xml_to_json'
 require 'json'
 
