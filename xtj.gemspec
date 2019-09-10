@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'xtj/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'XTJ'
+  spec.name          = 'xtj'
   spec.version       = XTJ::VERSION
   spec.authors       = ['Grzegorz Jakubiak']
   spec.email         = ['grzegorz.jakubiak@outlook.com']

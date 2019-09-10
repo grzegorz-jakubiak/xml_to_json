@@ -1,5 +1,7 @@
 # XTJ
 
+[![Build Status](https://travis-ci.org/grzegorz-jakubiak/xtj.svg?branch=master)](https://travis-ci.org/grzegorz-jakubiak/xtj)
+
 Allows for conversion of an `XML` file into Ruby `Hash` or `JSON`.
 
 
