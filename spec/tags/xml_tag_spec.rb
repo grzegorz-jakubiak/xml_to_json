@@ -1,17 +1,17 @@
 # typed: false
 # frozen_string_literal: true
 
-RSpec.describe XMLToJson::Tags::XMLTag do
+RSpec.describe XTJ::Tags::XMLTag do
   let!(:p_tag) do
-    XMLToJson::Tags::XMLTag.new(tag: :p, attributes: { _class: 'caption' })
+    XTJ::Tags::XMLTag.new(tag: :p, attributes: { _class: 'caption' })
   end
 
   let!(:b_tag) do
-    XMLToJson::Tags::XMLTag.new(tag: :p, attributes: { _class: 'bold-caption', _text: 'Bold Text' })
+    XTJ::Tags::XMLTag.new(tag: :p, attributes: { _class: 'bold-caption', _text: 'Bold Text' })
   end
 
   it 'creates p tag with no attributes' do
-    xml_tag = XMLToJson::Tags::XMLTag.new(tag: :p, attributes: {})
+    xml_tag = XTJ::Tags::XMLTag.new(tag: :p, attributes: {})
     expect(xml_tag.tag).to eq(:p)
     expect(xml_tag.attributes).to eq({})
   end

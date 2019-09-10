@@ -1,13 +1,13 @@
 # typed: true
 # frozen_string_literal: true
 
-require_relative 'xml_to_json/version'
-require_relative 'xml_to_json/tags/xml_tag'
-require_relative 'xml_to_json/handlers/xml_handler'
+require_relative 'xtj/version'
+require_relative 'xtj/tags/xml_tag'
+require_relative 'xtj/handlers/xml_handler'
 require 'rexml/parsers/sax2parser'
 require 'json'
 
-module XMLToJson
+module XTJ
   class Document
     extend T::Sig
 

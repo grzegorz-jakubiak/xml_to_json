@@ -5259,6 +5259,16 @@ module Warning
   extend ::Warning
 end
 
-class XMLToJson::Handlers::XMLHandler
+class XTJ::Document
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
+end
+
+class XTJ::Handlers::XMLHandler
   include ::REXML::SAX2Listener
+end
+
+class XTJ::Tags::XMLTag
+  extend ::T::Private::Methods::MethodHooks
+  extend ::T::Private::Methods::SingletonMethodHooks
 end

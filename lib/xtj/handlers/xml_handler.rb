@@ -3,11 +3,11 @@
 
 require 'rexml/sax2listener'
 
-module XMLToJson
+module XTJ
   module Handlers
     class XMLHandler
       include REXML::SAX2Listener
-      include XMLToJson::Tags
+      include XTJ::Tags
       attr_reader :xml_hash
 
       def initialize

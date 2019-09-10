@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    xml_to_json (0.1.0)
+    XTJ (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -45,13 +45,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  XTJ!
   bundler (~> 1.17)
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.74.0)
   sorbet
   sorbet-runtime
-  xml_to_json!
 
 BUNDLED WITH
    1.17.3

@@ -1620,7 +1620,7 @@
 # wrong constant name <static-init>
 # wrong constant name worse_than?
 # wrong constant name +
-# uninitialized constant #<Class:0x0000558409cf1740>::Elem
+# uninitialized constant #<Class:0x000056280e452720>::Elem
 # wrong constant name candidate?
 # wrong constant name ideal?
 # wrong constant name indeterminate_actual_indexes

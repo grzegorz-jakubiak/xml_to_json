@@ -1,4 +1,4 @@
-# XMLToJson
+# XTJ
 
 Allows for conversion of an `XML` file into Ruby `Hash` or `JSON`.
 
@@ -8,7 +8,7 @@ Allows for conversion of an `XML` file into Ruby `Hash` or `JSON`.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'xml_to_json'
+gem 'xtj'
 ```
 
 And then execute:
@@ -17,17 +17,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install xml_to_json
+    $ gem install xtj
 
 ## Usage
 
 ```ruby
-require 'xml_to_json'
+require 'xtj'
 
-xml_document = XMLToJson::Document.new(<xml_document_string>)
+xml_document = XTJ::Document.new(<xml_document_string>)
 
 file = File.new(<xml_document_path>)
-xml_document = XMLToJson::Document.new(file)
+xml_document = XTJ::Document.new(file)
 
 xml_document.to_hash
 xml_document.to_json
@@ -41,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/xml_to_json. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/xtj. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -49,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the XmlToJson project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/xml_to_json/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the XTJ project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/xtj/blob/master/CODE_OF_CONDUCT.md).

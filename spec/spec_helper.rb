@@ -3,7 +3,7 @@
 
 require 'bundler/setup'
 require 'sorbet-runtime'
-require 'xml_to_json'
+require 'xtj'
 require 'json'
 
 RSpec.configure do |config|

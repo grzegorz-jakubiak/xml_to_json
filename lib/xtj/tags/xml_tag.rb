@@ -1,7 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
-module XMLToJson
+module XTJ
   module Tags
     class XMLTag
       extend T::Sig
