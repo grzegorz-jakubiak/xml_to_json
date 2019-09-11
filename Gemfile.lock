@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    XTJ (0.1.0)
+    xtj (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -45,13 +45,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  XTJ!
   bundler (~> 1.17)
   rake (~> 10.0)
   rspec (~> 3.0)
   rubocop (~> 0.74.0)
   sorbet
   sorbet-runtime
+  xtj!
 
 BUNDLED WITH
    1.17.3
