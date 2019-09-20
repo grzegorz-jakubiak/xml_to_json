@@ -1,6 +1,7 @@
 # typed: true
 # frozen_string_literal: true
 
+require 'sorbet-runtime'
 require_relative 'xtj/version'
 require_relative 'xtj/tags/xml_tag'
 require_relative 'xtj/handlers/xml_handler'
