@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = spec.summary
   spec.homepage      = 'https://github.com/grzegorz-jakubiak/xtj'
   spec.license       = 'MIT'
-  spec.required_ruby_version = '>=2.5'
+  spec.required_ruby_version = '>=2.7'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
@@ -21,9 +21,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 1.17'
-  spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rspec', '~> 3.2'
+  spec.add_runtime_dependency 'zeitwerk', '~> 2.4'
   spec.add_runtime_dependency 'sorbet'
   spec.add_runtime_dependency 'sorbet-runtime'
 end

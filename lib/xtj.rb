@@ -2,11 +2,18 @@
 # frozen_string_literal: true
 
 require 'sorbet-runtime'
-require_relative 'xtj/version'
-require_relative 'xtj/tags/xml_tag'
-require_relative 'xtj/handlers/xml_handler'
 require 'rexml/parsers/sax2parser'
+require 'rexml/sax2listener'
 require 'json'
+require 'zeitwerk'
+
+loader = Zeitwerk::Loader.for_gem
+loader.inflector.inflect(
+  'xtj' => 'XTJ',
+  'xml_tag' => 'XMLTag',
+  'xml_handler' => 'XMLHandler'
+)
+loader.setup
 
 module XTJ
   class Document
