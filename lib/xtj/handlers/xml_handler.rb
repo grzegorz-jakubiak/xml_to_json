@@ -1,8 +1,6 @@
 # typed: true
 # frozen_string_literal: true
 
-require 'rexml/sax2listener'
-
 module XTJ
   module Handlers
     class XMLHandler
