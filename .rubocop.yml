@@ -1,10 +1,11 @@
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
   Exclude:
-    - Gemfile
+    - gems.rb
     - '*.gemspec'
     - 'spec/**/*_spec.rb'
     - 'vendor/**/*'
+  NewCops: enable   
 
 Style/Documentation:
   Enabled: false
